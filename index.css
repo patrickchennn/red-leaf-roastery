@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+
+/* ~~~~~~~~~~~~~~~~~~~~RESET~~~~~~~~~~~~~~~~~~~~ */
+:root{
+    font-size: 16px;
+    --primary: #F4F4F4;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body,ul,h1,h2,h3,h4,h5,h6,p,figure{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* ~~~~~~~~~~~~~~~~~~~~RESET~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
+.title{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.set-sticky-bottom{
+    padding-top: 15rem;
+    padding-bottom: 3rem;
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
+}
+/* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+body {
+    background-color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    padding: 1rem 4rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    column-gap: 1.75rem;
+}
+
+.content1{
+    position: relative;
+}
+
+
+.content1-bg{
+    width: 100%;
+    height: 600px;
+}
+
+.desc-wrap{
+    position: absolute;
+    right: 2%;
+    top:25%;
+}
+
+.desc{
+    margin-bottom: 1rem;
+}
+
+.find-store-btn{
+    border: 0.5px solid rgb(112, 107, 107);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(214 157 33);
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    column-gap: 0.2rem;
+}
+
+.find-store-btn:hover{
+    background-color: rgb(230, 160, 50);
+    box-shadow: 0px 0px 3px gray;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2~~~~~~~~~~~~~~~~~~~~ */
+.content2{
+    margin: 2rem 1rem;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 1~~~~~~~~~~~~~~~~~~~~ */
+.section1-wrap{
+    border-top-left-radius: 4.5rem;
+    border-top-right-radius: 4.5rem;
+    background-color: #dadbf1;
+    position: relative;
+    z-index: -99;
+}
+
+.section1-content{
+    padding: 3rem 6rem;
+    border-radius: 4.5rem;
+    background-color: #ffcac3;
+    box-shadow: 0px 2px 15px rgb(110, 105, 105);
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    column-gap: 4rem;
+}
+
+.section1-title{
+    margin-bottom: 2.75rem;
+    grid-column: 1/4;
+}
+
+.section1-content code{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.25rem;
+}
+
+.section1-content .img-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.section1-content figcaption{
+    margin-top: 0.5rem;
+}
+
+.section1-content figcaption > p{
+    text-align: justify;
+    text-indent: 48px;
+}
+
+.section1-content img{
+    width: 100%;
+}
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
+
+.section2-wrap{
+    background: linear-gradient(180deg, #dadbf1 10%, #d5fafa 50%);;
+    position: relative;
+    z-index: -98;
+}
+
+.section2-content{
+    padding: 3rem 6rem;
+    /* border-radius: 0 0 4.5rem 4.5rem; */
+    border-radius: 4.5rem;
+
+    background-color: #dadbf1;
+    box-shadow: 0px 2px 15px rgb(110, 105, 105);
+
+    /* position: absolute;
+    top: -65px;
+    z-index: 99; */
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    row-gap: 2rem;
+}
+
+.section2-content > figure{
+    display: flex;
+    column-gap: 4rem;
+}
+
+.section2-content > figure:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.section2-content > figure img {
+    width: 40%;
+}
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 3~~~~~~~~~~~~~~~~~~~~ */
+.section3-wrap{
+    background: linear-gradient(180deg, #d5fafa 20%, var(--primary) 50%);;
+
+}
+
+.section3-content{
+    box-shadow: 0px 2px 15px rgb(110, 105, 105);
+    padding: 3rem;
+    border-radius: 4.5rem;
+    background-color: #d5fafa;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 2rem;
+}
+
+.section3-wrap img{
+    width: 60%;
+}
+
+.tube{
+    background-color: green;
+    width: 90%;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: red;
+    width: 100%;
+    height: 500px;
+}
