@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
 
+
+
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~RESET~~~~~~~~~~~~~~~~~~~~ */
 :root{
     font-size: 16px;
     --primary: #F4F4F4;
+    --content2: #f9faff;
+    --content2-per-section: rgb(236 236 236);
 }
 
 *,*::after,*::before{
@@ -27,8 +34,25 @@ body,ul,h1,h2,h3,h4,h5,h6,p,figure{
 /* ~~~~~~~~~~~~~~~~~~~~RESET~~~~~~~~~~~~~~~~~~~~ */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
 .title{
+    border-top: 2px solid black;
+    border-radius: 3rem;
     font-family: 'Edu VIC WA NT Beginner', cursive;
     font-size: 4rem;
     text-align: center;
@@ -41,6 +65,10 @@ body,ul,h1,h2,h3,h4,h5,h6,p,figure{
     bottom: 0;
     z-index: -1;
 }
+
+.transparent-color{
+    color: transparent;
+}
 /* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
 
 
@@ -50,6 +78,22 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.container{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~ */
 header{
     padding: 1rem 4rem;
     background-color: white;
@@ -57,6 +101,9 @@ header{
     justify-content: space-between;
 }
 
+.logo{
+    cursor: pointer;
+}
 nav {
     display: flex;
     align-items: center;
@@ -104,17 +151,72 @@ nav ul{
     box-shadow: 0px 0px 3px gray;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2~~~~~~~~~~~~~~~~~~~~ */
-.content2{
-    margin: 2rem 1rem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT 1~~~~~~~~~~~~~~~~~~~~ */
+.content1-bg-wrap{
+    display: flex;
+    justify-content: center;
+}
+
+.content1-bg{
+    max-width: 1400px;
 }
 
 
-/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 1~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT2~~~~~~~~~~~~~~~~~~~~ */
+.content2{
+    margin: 2rem 1rem;
+    border-radius: 4.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 1~~~~~~~~~~~~~~~~~~~~ */
 .section1-wrap{
-    border-top-left-radius: 4.5rem;
-    border-top-right-radius: 4.5rem;
-    background-color: #dadbf1;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    background-color: var(--content2);
     position: relative;
     z-index: -99;
 }
@@ -122,7 +224,7 @@ nav ul{
 .section1-content{
     padding: 3rem 6rem;
     border-radius: 4.5rem;
-    background-color: #ffcac3;
+    background-color: var(--content2-per-section);
     box-shadow: 0px 2px 15px rgb(110, 105, 105);
 
     display: grid;
@@ -132,11 +234,12 @@ nav ul{
 }
 
 .section1-title{
-    margin-bottom: 2.75rem;
+    margin-bottom: 3rem;
     grid-column: 1/4;
 }
 
 .section1-content code{
+    color: rgb(85, 85, 85);
     display: flex;
     justify-content: center;
     column-gap: 0.25rem;
@@ -163,25 +266,29 @@ nav ul{
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
 
 .section2-wrap{
-    background: linear-gradient(180deg, #dadbf1 10%, #d5fafa 50%);;
+    background-color: var(--content2);
     position: relative;
     z-index: -98;
 }
 
 .section2-content{
     padding: 3rem 6rem;
-    /* border-radius: 0 0 4.5rem 4.5rem; */
     border-radius: 4.5rem;
 
-    background-color: #dadbf1;
+    background-color: var(--content2-per-section);
     box-shadow: 0px 2px 15px rgb(110, 105, 105);
-
-    /* position: absolute;
-    top: -65px;
-    z-index: 99; */
     display: grid;
     grid-template-rows: repeat(3,1fr);
     row-gap: 2rem;
@@ -197,36 +304,64 @@ nav ul{
 }
 
 .section2-content > figure img {
-    width: 40%;
+    width: 30%;
 }
 
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~ARTICLE 2 SECTION 3~~~~~~~~~~~~~~~~~~~~ */
-.section3-wrap{
-    background: linear-gradient(180deg, #d5fafa 20%, var(--primary) 50%);;
 
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 3~~~~~~~~~~~~~~~~~~~~ */
+.section3-wrap{
+    border-bottom-left-radius: 4.5rem;
+    border-bottom-right-radius: 4.5rem;
+    background-color: var(--content2);
 }
 
 .section3-content{
     box-shadow: 0px 2px 15px rgb(110, 105, 105);
-    padding: 3rem;
+    padding: 3rem 2rem;
     border-radius: 4.5rem;
-    background-color: #d5fafa;
+    background-color: var(--content2-per-section);
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,minmax(350px,1fr));
     column-gap: 2rem;
 }
 
-.section3-wrap img{
-    width: 60%;
+.section3-content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.tube{
-    background-color: green;
-    width: 90%;
-    height: 500px;
+.section3-content .kohi-pack{
+    border: 4px solid #e0e0e0;
+    border-radius: 15px;
+}
+
+.section3-content .product-desc-wrap{
+    margin-top: 0.75rem;
+}
+
+.section3-content .product-desc-btn{
+    padding: 0;
+    border: 0;
+    background-color: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -243,12 +378,60 @@ nav ul{
 
 
 
-
-
-
+/* ~~~~~~~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~~~~~~ */
 
 footer{
     background-color: red;
     width: 100%;
     height: 500px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~responsive~~~~~~~~~~~~~~~~~~~~ */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+    
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+    .container{
+        width: 1320px;
+    }
+}
+
