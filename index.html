@@ -11,21 +11,24 @@
   <body>
     <div class="container">
       <header>
-        <img  class="logo" src="assets/logo3.png" alt="logo">
-  
-        <nav>
+        <img class="logo" src="assets/logo3.png" alt="logo">
+        <nav class="top-nav">
           <ul>
-            <a href="#">
-              <li>Roasting</li>
+            <a href="">
+              <li>Garden</li>
             </a>
-            <a href="#">
-              <li>Menus</li>
+            <a href="">
+              <li>Coffee & Tea Tools</li>
             </a>
-            <a href="#">
-              <li>Beans</li>
+            <a href="">
+              <li>Products</li>
             </a>
           </ul>
         </nav>
+        <button class="menu btn1">
+          <span class="icon-left"></span>
+          <span class="icon-right"></span>
+        </button>
       </header>
   
 
@@ -35,16 +38,15 @@
           <div class="content1-bg-wrap">
             <img class="content1-bg" src="assets/home-bg/kohi-xl.jpg" alt="">
           </div>
+          <h1 class="title content1-title-mobile">WE SPECIALIZE COFFEE BEANS。</h1>
           <div class="desc-wrap">
-            <h1 class="title">
+            <h1 class="title content1-title">
               <div>WE SPECIALIZE</div>
-              <div>COFFEE BEANS</div>
+              <div>COFFEE BEANS。</div>
             </h1>
-            <div class="desc">
-              <p><mark>Red Bean Roastery</mark> is a carefully curated coffee beans, </p>  
-              <p>food hall & community space open year-round at 265 Canal Street. </p>
-              <p>Support Small Business this weekend!</p>
-            </div>
+            <p class="desc">
+              <mark>Red Bean Roastery</mark> is a carefully curated coffee beans, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!
+            </p>
             <button class="find-store-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
                 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
@@ -57,15 +59,16 @@
       </main>
 
 
-      <div class="content2">
+      <div class="content2-wrap">
         <section class="section1-wrap">
           <h1 class="section1-title title">Our Speacial Coffee Cherry</h1>
-          <div class="section1-content">
+          <div class="section1-content content">
             <div>
               <figure>
-                <div class="img-wrap">
-                  <img src="assets/cherry-bean3.jpg" alt="">
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail1"></div>
                 </div>
+                
                 <figcaption>
                   <code>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
@@ -82,9 +85,10 @@
     
             <div>
               <figure>
-                <div class="img-wrap">
-                  <img src="assets/cherry-bean1.jpg" alt="">
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail2"></div>
                 </div>
+                
                 <figcaption>
                   <code>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
@@ -101,9 +105,10 @@
     
             <div>
               <figure>
-                <div class="img-wrap">
-                  <img src="assets/cherry-bean2.jpg" alt="">
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail3"></div>
                 </div>
+                
                 <figcaption>
                   <code>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
@@ -125,9 +130,9 @@
         </section>
         
         <section class="section2-wrap">
-          <div class="section2-content">
+          <div class="section2-content content">
             <figure>
-              <img src="assets/kohi-machine1-sm.jpg" alt="">
+              <img src="assets/roaster.jpg" alt="a machine for roasting coffee">
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
@@ -135,7 +140,7 @@
             </figure>
           
             <figure>
-              <img src="assets/kohi-machine2-sm.jpg" alt="">
+              <img src="assets/espresso-machine.jpg" alt="espresso machine">
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
@@ -143,7 +148,7 @@
             </figure>
 
             <figure>
-              <img src="assets/kohi-grinder-sm.jpg" alt="">
+              <img src="assets/kohi-grinder-sm.jpg" alt="coffee grinder">
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
@@ -152,12 +157,12 @@
           </div>
 
           <div class="set-sticky-bottom">
-            <h1 class="title">Best Seller Beans</h1>
+            <h1 class="title section3-title">Best Seller Beans</h1>
           </div>
         </section>
 
         <section class="section3-wrap">
-          <div class="section3-content">
+          <div class="section3-content content">
             <div>
               <img class="kohi-pack" src="assets/resized/kohi-pack1.jpg" alt="">
               <div class="product-desc-wrap">
@@ -218,14 +223,21 @@
   
 
 
-      <div class="new-letters">
+      <div class="brewing-tools">
   
       </div>
   
 
 
       <footer>
-        footer...
+        <nav class="social-medias">
+          <ul>
+            <li>Instagram</li>
+            <li>Youtube</li>
+            <li>Facebook</li>
+            <li>Tiktok</li>
+          </ul>
+        </nav>
       </footer>
     </div>
     <script src="script.js"></script>

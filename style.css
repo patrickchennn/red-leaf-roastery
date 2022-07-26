@@ -69,7 +69,19 @@ body,ul,h1,h2,h3,h4,h5,h6,p,figure{
 .transparent-color{
     color: transparent;
 }
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
+
+
+
 
 
 
@@ -114,25 +126,8 @@ nav ul{
     column-gap: 1.75rem;
 }
 
-.content1{
-    position: relative;
-}
 
 
-.content1-bg{
-    width: 100%;
-    height: 600px;
-}
-
-.desc-wrap{
-    position: absolute;
-    right: 2%;
-    top:25%;
-}
-
-.desc{
-    margin-bottom: 1rem;
-}
 
 .find-store-btn{
     border: 0.5px solid rgb(112, 107, 107);
@@ -169,13 +164,49 @@ nav ul{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT 1~~~~~~~~~~~~~~~~~~~~ */
+
+.content1{
+    position: relative;
+}
+
+
 .content1-bg-wrap{
     display: flex;
     justify-content: center;
 }
 
 .content1-bg{
+    width: 100%;
     max-width: 1400px;
+}
+
+.content1 .desc-wrap > *{
+    width: fit-content;
+    height: fit-content;
+}
+
+
+.content1-title,.content1-title-mobile{ 
+    border: 0;
+}
+
+.content1-title-mobile{
+    display: none;
+    margin-top: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.desc-wrap{
+    position: absolute;
+    top: 25%;
+    left:55%;
+}
+
+.desc{
+    margin-bottom: 1rem;
 }
 
 
@@ -184,15 +215,27 @@ nav ul{
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~CONTENT2~~~~~~~~~~~~~~~~~~~~ */
-.content2{
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~CONTENT2 WRAP~~~~~~~~~~~~~~~~~~~~ */
+.content2-wrap{
     margin: 2rem 1rem;
     border-radius: 4.5rem;
 }
 
+.content2-wrap > section {
+    background-color: var(--content2);
+}
 
-
-
+.content2-wrap section > .content{
+    padding: 3rem 6rem;
+    border-radius: 4.5rem;
+    background-color: var(--content2-per-section);
+    box-shadow: 0px 2px 15px rgb(110, 105, 105);
+}
 
 
 
@@ -216,20 +259,12 @@ nav ul{
 .section1-wrap{
     border-top-left-radius: 2.5rem;
     border-top-right-radius: 2.5rem;
-    background-color: var(--content2);
     position: relative;
     z-index: -99;
 }
 
 .section1-content{
-    padding: 3rem 6rem;
-    border-radius: 4.5rem;
-    background-color: var(--content2-per-section);
-    box-shadow: 0px 2px 15px rgb(110, 105, 105);
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-
+    display: flex;
     column-gap: 4rem;
 }
 
@@ -245,9 +280,31 @@ nav ul{
     column-gap: 0.25rem;
 }
 
-.section1-content .img-wrap {
+.section1-content .thumbnail-container{
     display: flex;
     justify-content: center;
+}
+
+.section1-content .thumbnail{
+    border:1px solid #147412;
+    border-radius: 2px;
+    background-size:cover;
+    background-position: center center;
+    box-shadow: 0px 0px 5px 1px #072906;
+    width: 300px;
+    height: 400px;
+}
+
+.section1-content .thumbnail1{
+    background-image: url("assets/plant1-vertical.jpg");
+}
+
+.section1-content .thumbnail2{
+    background-image: url("assets/plant2-vertical.jpg");
+}
+
+.section1-content .thumbnail3{
+    background-image: url("assets/plant3-vertical.jpg");
 }
 
 .section1-content figcaption{
@@ -259,9 +316,6 @@ nav ul{
     text-indent: 48px;
 }
 
-.section1-content img{
-    width: 100%;
-}
 
 
 
@@ -276,19 +330,12 @@ nav ul{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
-
 .section2-wrap{
-    background-color: var(--content2);
     position: relative;
     z-index: -98;
 }
 
 .section2-content{
-    padding: 3rem 6rem;
-    border-radius: 4.5rem;
-
-    background-color: var(--content2-per-section);
-    box-shadow: 0px 2px 15px rgb(110, 105, 105);
     display: grid;
     grid-template-rows: repeat(3,1fr);
     row-gap: 2rem;
@@ -326,17 +373,11 @@ nav ul{
 .section3-wrap{
     border-bottom-left-radius: 4.5rem;
     border-bottom-right-radius: 4.5rem;
-    background-color: var(--content2);
 }
 
 .section3-content{
-    box-shadow: 0px 2px 15px rgb(110, 105, 105);
-    padding: 3rem 2rem;
-    border-radius: 4.5rem;
-    background-color: var(--content2-per-section);
-    display: grid;
-    grid-template-columns: repeat(3,minmax(350px,1fr));
-    column-gap: 2rem;
+    display: flex;
+    column-gap: 1rem;
 }
 
 .section3-content > div {
@@ -368,7 +409,12 @@ nav ul{
 
 
 
-
+/*  */
+.brewing-tools{
+    width: 100%;
+    height: 100px;
+    background-color: rebeccapurple;
+}
 
 
 
@@ -381,10 +427,142 @@ nav ul{
 /* ~~~~~~~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~~~~~~ */
 
 footer{
-    background-color: red;
+    background-color: black;
     width: 100%;
-    height: 500px;
+    height: 200px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~BURGERRRRRRRRRRRRRRRRRRRRRR~~~~~~~~~~~~~~~~~~~~ */
+/* https://github.com/patrickchennn/hamburg-menu */
+.btn1 {
+    border: 0;
+    background-color: inherit;
+    width: 2em;
+    height: 2.1em;
+    position: relative;
+    transition-duration: 500ms;
+    display: none;
+  }
+  .btn1 .icon-left {
+    background-color: #212121;
+    width: 1em;
+    height: 0.3em;
+    position: absolute;
+    display: block;
+    transition-duration: 0.5s;
+    left: 0;
+  }
+  .btn1 .icon-left, .btn1 .icon-left::before, .btn1 .icon-left::after {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  .btn1 .icon-left::before, .btn1 .icon-left::after {
+    background-color: #212121;
+    width: 1em;
+    height: 0.3em;
+    display: block;
+    position: absolute;
+    content: "";
+    transition-duration: 0.5s;
+    left: 0;
+  }
+  .btn1 .icon-left::before {
+    bottom: 10px;
+  }
+  .btn1 .icon-left::after {
+    top: 10px;
+  }
+  .btn1 .icon-right {
+    background-color: #212121;
+    width: 1em;
+    height: 0.3em;
+    position: absolute;
+    display: block;
+    transition-duration: 0.5s;
+    right: 0;
+  }
+  .btn1 .icon-right, .btn1 .icon-right::before, .btn1 .icon-right::after {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .btn1 .icon-right::before, .btn1 .icon-right::after {
+    background-color: #212121;
+    width: 1em;
+    height: 0.3em;
+    display: block;
+    position: absolute;
+    content: "";
+    transition-duration: 0.5s;
+    right: 0;
+  }
+  .btn1 .icon-right::before {
+    bottom: 10px;
+  }
+  .btn1 .icon-right::after {
+    top: 10px;
+  }
+  .btn1.open .icon-left, .btn1.open .icon-right {
+    background-color: transparent;
+    transition: background-color 500ms;
+  }
+  .btn1.open .icon-left::before {
+    transform: rotateZ(45deg) translate(1px, 4px) scale(1.1);
+    width: 1.3em;
+    transition: width 1s, transform 350ms;
+  }
+  .btn1.open .icon-left::after {
+    transform: rotateZ(-45deg) translate(1px, -4px) scale(1.1);
+    width: 1.3em;
+    transition: width 1s, transform 350ms;
+  }
+  .btn1.open .icon-right::before {
+    transform: rotateZ(-45deg) translate(-1px, 4px) scale(1.1);
+    width: 1.3em;
+    transition: width 1s, transform 350ms;
+  }
+  .btn1.open .icon-right::after {
+    transform: rotateZ(45deg) translate(-1px, -4px) scale(1.1);
+    width: 1.3em;
+    transition: width 1s, transform 350ms;
+  }
+  .btn1:hover {
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
 
 
 
@@ -403,35 +581,162 @@ footer{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~responsive~~~~~~~~~~~~~~~~~~~~ */
+/* breakpoint reference: https://getbootstrap.com/docs/5.2/layout/breakpoints/ *
 
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) { 
-    
-}
-
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
- }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-
- }
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-
- }
-
-/* XX-Large devices (larger desktops, 1400px and up) */
+/* XX-Large devices (larger desktops, >=1400px and up) */
 @media (min-width: 1400px) { 
     .container{
         width: 1320px;
     }
 }
 
+/* X-Large devices (large desktops, <=1200px) */
+@media (max-width: 1200px) { 
+    .title{
+        font-size: 3.5rem;
+    }
+    .section1-content .thumbnail{
+        width: 250px;
+        height: 350px;
+    }
+    .section3-content .kohi-pack{
+        width: 200px;
+    }
+}
+
+/* Large devices (desktops, <=992px) */
+@media (max-width: 992px) { 
+    .title{
+        font-size: 2.5rem;
+    }
+    .section1-content .thumbnail{
+        width: 150px;
+        height: 250px;
+    }
+}
+
+/* Medium devices (tablets, <=768px) */
+@media (max-width: 768px) {
+    :root{
+        font-size: 14px;
+    }
+    header{
+        padding: 0.75rem 1rem;
+    }
+
+    header .logo{
+        width: 27%;
+    }
+    header nav ul{
+        column-gap: 1rem;
+    }
+
+    .set-sticky-bottom{
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .content1 .find-store-btn{
+        border-radius: 6px;
+        padding: 0.25rem 0.5rem;
+    }
+    .desc-wrap{
+        left: 57%;
+    }
+
+    .content2-wrap section > .content{
+        padding: 1rem 2rem;
+    }
+
+    .section1-content{
+        flex-wrap: wrap;
+        row-gap: 2rem;
+    }
+
+    .section1-content .thumbnail{
+        width: 70%;
+        height: 200px;
+    }
+
+    .section1-content .thumbnail1{
+        background-image: url("assets/plant1-horizontal.jpg");
+    }
+    
+    .section1-content .thumbnail2{
+        background-image: url("assets/plant2-horizontal.jpg");
+    }
+    
+    .section1-content .thumbnail3{
+        background-image: url("assets/plant3-horizontal.jpg");
+    }
+
+    .section2-content figure > img{
+        width: 20%;
+    }
+    .section3-content .product-desc-btn{
+        font-size: 1rem;
+    }
+    .section3-content .kohi-pack{
+        width: 160px;
+    }
+}
+
+/* Small devices (landscape phones, <=576px and down) */
+@media (max-width: 576px) { 
+    .btn1{
+        display: block;
+    }
+    :root{
+        font-size: 12px;
+    }
+
+    header{
+        position: relative;
+    }
+
+    header nav{
+        display: none;
+    }
+    header nav ul{
+        background-color: black;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 100;
+    }
+    header nav ul li {
+        padding: 1rem 2rem;
+        border-radius: 3px;
+        border: 1px solid gray;
+        color: whitesmoke
+    };
+    
+
+    .content1-title-mobile{
+        display: block;
+        font-size: 2rem !important;
+    }
+
+    .content1-title{
+        display: none;
+    }
+
+    .content1 .find-store-btn{
+        display: none;
+    }
+
+    .section1-content .thumbnail{
+        width: 90%;
+        height: 100px;
+    }
+    .section3-content {
+        flex-wrap: wrap;
+    }
+    .section3-content > div{
+        align-items: center;
+    }
+    .section3-content .kohi-pack{
+        width: 70%;
+    }
+}
