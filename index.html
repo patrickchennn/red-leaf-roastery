@@ -14,15 +14,10 @@
         <img class="logo" src="assets/logo3.png" alt="logo">
         <nav class="top-nav">
           <ul>
-            <a href="">
-              <li>Garden</li>
-            </a>
-            <a href="">
-              <li>Coffee & Tea Tools</li>
-            </a>
-            <a href="">
-              <li>Products</li>
-            </a>
+            <li><a href="">Garden</a></li>
+            <li><a href="">Coffee & Tea Tools</a></li>
+            <li><a href="">Products</a></li>
+            <li class="algo-menu-line"></li>
           </ul>
         </nav>
         <button class="menu btn1">
@@ -45,7 +40,7 @@
               <div>COFFEE BEANS。</div>
             </h1>
             <p class="desc">
-              <mark>Red Bean Roastery</mark> is a carefully curated coffee beans, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!
+              <mark>Red Bean Roastery</mark> is a carefully curated coffee beans, food hall & community space open year-round at Gajahmada Street. Support Small Business this weekend!
             </p>
             <button class="find-store-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -56,6 +51,29 @@
             </button>
           </div>
         </article>
+
+        <aside>
+          <div class="info-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+          </div>
+
+          <div class="about-me hidden">
+            <div>
+              <div class="profile-wrap">
+                <img src="assets/temp.jpg" alt="my profile">
+              </div>
+              <div class="desc">
+                <h2>Patrick</h2>
+                <h4 class="subtitle">Frontend Developer</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente perspiciatis quia reiciendis repellat tempora, impedit dolorum fuga facilis recusandae dolorem dolor beatae eum esse blanditiis delectus? Repellendus quae in nobis sunt minus cumque provident nemo id accusamus quos similique unde perferendis aliquid, aut pariatur odio recusandae, nisi ipsam suscipit.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </main>
 
 
@@ -63,8 +81,12 @@
         <section class="section1-wrap">
           <h1 class="section1-title title">Our Speacial Coffee Cherry</h1>
           <div class="section1-content content">
-            <div>
+            <!-- slide 1 -->
+            <div class="slide slide1">
               <figure>
+                <!-- reference: -->
+                <!-- https://stackoverflow.com/questions/4216035/css-background-image-alt-attribute -->
+                <!-- this is supposed to be an img tag, but it's kinda hard to get the responsive aspect -->
                 <div class="thumbnail-container">
                   <div class="thumbnail thumbnail1"></div>
                 </div>
@@ -76,14 +98,10 @@
                     </svg>
                     Brazil, Espirito Santos.
                   </code>
-                  <p>
-                    soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.
-                  </p>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
                 </figcaption>
               </figure>
-            </div>
-    
-            <div>
+      
               <figure>
                 <div class="thumbnail-container">
                   <div class="thumbnail thumbnail2"></div>
@@ -96,17 +114,17 @@
                     </svg>
                     Indonesia, Bali Kintanami
                   </code>
-                  <p>
-                    soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.
-                  </p>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
                 </figcaption>
               </figure>
+      
             </div>
-    
-            <div>
+            
+            <!-- slide 2 -->
+            <div class="slide slide2">
               <figure>
                 <div class="thumbnail-container">
-                  <div class="thumbnail thumbnail3"></div>
+                  <div class="thumbnail thumbnail1"></div>
                 </div>
                 
                 <figcaption>
@@ -116,12 +134,73 @@
                     </svg>
                     Brazil, Espirito Santos.
                   </code>
-                  <p>
-                    soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.
-                  </p>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
+                </figcaption>
+              </figure>
+
+              <figure>
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail2"></div>
+                </div>
+                
+                <figcaption>
+                  <code>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                    </svg>
+                    Brazil, Espirito Santos.
+                  </code>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
                 </figcaption>
               </figure>
             </div>
+            
+            <!-- slide 3 -->
+            <div class="slide slide3">
+              <figure>
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail1"></div>
+                </div>
+                
+                <figcaption>
+                  <code>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                    </svg>
+                    Brazil, Espirito Santos.
+                  </code>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
+                </figcaption>
+              </figure>
+
+              <figure>
+                <div class="thumbnail-container">
+                  <div class="thumbnail thumbnail2"></div>
+                </div>
+                
+                <figcaption>
+                  <code>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                    </svg>
+                    Brazil, Espirito Santos.
+                  </code>
+                  <p>soluta. Quas neque id minima, ducimus et vel, sint qui totam ipsam vero autem expedita aperiam harum officia iste corrupti architecto tempora.</p>
+                </figcaption>
+              </figure>
+            </div>
+
+                  <!-- Control buttons -->
+            <button class="btn btn-next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </button>
+            <button class="btn btn-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg>
+            </button>
           </div>
           
           <div class="section2-title-wrap set-sticky-bottom">
@@ -135,7 +214,7 @@
               <img src="assets/roaster.jpg" alt="a machine for roasting coffee">
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
+                <p>Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
               </figcaption>
             </figure>
           
@@ -143,15 +222,16 @@
               <img src="assets/espresso-machine.jpg" alt="espresso machine">
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
+                <p>Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
               </figcaption>
             </figure>
 
             <figure>
-              <img src="assets/kohi-grinder-sm.jpg" alt="coffee grinder">
+              <!-- this is supposed to be an img tag, but it's kinda hard to get the responsive ascpect -->
+              <div class="grinder" aria-label="coffee grinder"></div>
               <figcaption>
                 <h1>Lorem ipsum dolor sit amet.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis expedita doloremque. Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
+                <p>Esse hic dolore culpa soluta voluptates! Eius, deserunt?</p>
               </figcaption>
             </figure>
           </div>
@@ -170,6 +250,7 @@
                 <button class="product-desc-btn">
                   Show Description
                   <div class="caret-container">
+                    <!-- icon reference: https://icons.getbootstrap.com/ -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                       <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
                     </svg>
@@ -231,11 +312,12 @@
 
       <footer>
         <nav class="social-medias">
+          <h4>Social Media</h4>
           <ul>
-            <li>Instagram</li>
-            <li>Youtube</li>
-            <li>Facebook</li>
-            <li>Tiktok</li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Tiktok</a></li>
           </ul>
         </nav>
       </footer>

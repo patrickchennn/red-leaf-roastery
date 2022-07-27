@@ -66,17 +66,13 @@ body,ul,h1,h2,h3,h4,h5,h6,p,figure{
     z-index: -1;
 }
 
-.transparent-color{
-    color: transparent;
-}
+.transparent-color{ color: transparent !important; }
 
-.hidden{
-    display: none;
-}
+.hidden{ display: none !important; }
 
-.show{
-    display: block;
-}
+.show{ display: block !important; }
+
+.show-flex{ display: flex !important; }
 
 /* ~~~~~~~~~~~~~~~~~~~~GLOBAL CLASS~~~~~~~~~~~~~~~~~~~~ */
 
@@ -116,17 +112,39 @@ header{
 .logo{
     cursor: pointer;
 }
-nav {
+
+header nav {
     display: flex;
     align-items: center;
 }
 
-nav ul{
+header nav ul{
+    position: relative;
     display: flex;
     column-gap: 1.75rem;
 }
 
+header nav ul li:hover{
+    cursor: pointer;
+}
 
+header nav ul li:active{
+    transform: scale(0.9);
+    transition-duration: 50ms;
+}
+
+.algo-menu-line{
+    background-color: black;
+    display: none;
+    height: 2px;
+  
+    transition: all 750ms ease-out;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 
 
 .find-store-btn{
@@ -186,7 +204,8 @@ nav ul{
 }
 
 
-.content1-title,.content1-title-mobile{ 
+.content1-title,
+.content1-title-mobile{ 
     border: 0;
 }
 
@@ -209,6 +228,63 @@ nav ul{
     margin-bottom: 1rem;
 }
 
+aside .info-container{
+    margin: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: 50px;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside .info-container:hover{
+    cursor: pointer;
+    background-color: #ececec;
+}
+
+.about-me{
+    display: flex;
+    justify-content: center;
+}
+
+
+.about-me > div{
+    border: 1px rgb(182, 182, 182) solid;
+    border-radius: 20px;
+    width: 40%;
+    background-color: #F0EBE3;
+}
+.about-me > div .desc{
+    padding: 1.5rem 1rem;
+}
+
+.about-me > div .desc .subtitle{
+    color: #6c757d;
+}
+
+.about-me > div .desc p{
+    margin-top: 0.75rem;
+}
+
+.about-me > div .profile-wrap{
+    padding: 1rem 0;
+    border-radius: 20px 20px 0 0;
+    background-color: #E2DCC8;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me > div .profile-wrap > img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+
+
 
 
 
@@ -224,6 +300,8 @@ nav ul{
 .content2-wrap{
     margin: 2rem 1rem;
     border-radius: 4.5rem;
+    display: grid;
+    grid-template-rows: repeat(3,auto);
 }
 
 .content2-wrap > section {
@@ -260,17 +338,19 @@ nav ul{
     border-top-left-radius: 2.5rem;
     border-top-right-radius: 2.5rem;
     position: relative;
-    z-index: -99;
 }
-
-.section1-content{
-    display: flex;
-    column-gap: 4rem;
-}
-
 .section1-title{
     margin-bottom: 3rem;
     grid-column: 1/4;
+}
+
+.section1-content{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    column-gap: 4rem;
 }
 
 .section1-content code{
@@ -295,17 +375,35 @@ nav ul{
     height: 400px;
 }
 
-.section1-content .thumbnail1{
-    background-image: url("assets/plant1-vertical.jpg");
+.section1-content .slide{
+    position: absolute;
+    display: flex;
 }
 
-.section1-content .thumbnail2{
-    background-image: url("assets/plant2-vertical.jpg");
+
+.section1-content .slide1 .thumbnail1{
+    background-image: url("assets/slide/1/ver1.jpg");
+}
+.section1-content .slide1 .thumbnail2{
+    background-image: url("assets/slide/1/ver2.jpg");
 }
 
-.section1-content .thumbnail3{
-    background-image: url("assets/plant3-vertical.jpg");
+
+.section1-content .slide2 .thumbnail1{
+    background-image: url("assets/slide/2/ver1.jpg");
 }
+.section1-content .slide2 .thumbnail2{
+    background-image: url("assets/slide/2/ver2.jpg");
+}
+
+
+.section1-content .slide3 .thumbnail1{
+    background-image: url("assets/slide/3/ver1.jpg");
+}
+.section1-content .slide3 .thumbnail2{
+    background-image: url("assets/slide/3/ver2.jpg");
+}
+
 
 .section1-content figcaption{
     margin-top: 0.5rem;
@@ -316,9 +414,24 @@ nav ul{
     text-indent: 48px;
 }
 
+.section1-content .btn{
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 50%;
+    background-color: #CEE5D0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+}
 
+.section1-content .btn:focus{
+    border: 10px solid salmon;
+}
 
-
+.section1-content .btn > svg{
+    width: 2rem;
+    height: 2rem;
+}
 
 
 
@@ -332,7 +445,6 @@ nav ul{
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
 .section2-wrap{
     position: relative;
-    z-index: -98;
 }
 
 .section2-content{
@@ -343,7 +455,7 @@ nav ul{
 
 .section2-content > figure{
     display: flex;
-    column-gap: 4rem;
+    column-gap: 3rem;
 }
 
 .section2-content > figure:nth-child(even){
@@ -351,10 +463,15 @@ nav ul{
 }
 
 .section2-content > figure img {
-    width: 30%;
+    width: 40%;
 }
 
-
+.section2-content > figure > .grinder {
+    width: 40%;
+    background-image: url("assets/grinder-sm.jpg");
+    background-size:cover;
+    background-position: center center;
+}
 
 
 
@@ -377,7 +494,6 @@ nav ul{
 
 .section3-content{
     display: flex;
-    column-gap: 1rem;
 }
 
 .section3-content > div {
@@ -427,9 +543,14 @@ nav ul{
 /* ~~~~~~~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~~~~~~ */
 
 footer{
-    background-color: black;
+    color: #E7F6F2;
+    background-color: #2C3333;
     width: 100%;
     height: 200px;
+}
+
+footer a{
+    color: #E7F6F2;
 }
 
 
@@ -459,9 +580,8 @@ footer{
 
 
 
-
 /* ~~~~~~~~~~~~~~~~~~~~BURGERRRRRRRRRRRRRRRRRRRRRR~~~~~~~~~~~~~~~~~~~~ */
-/* https://github.com/patrickchennn/hamburg-menu */
+/* reference: https://github.com/patrickchennn/hamburg-menu */
 .btn1 {
     border: 0;
     background-color: inherit;
@@ -600,7 +720,7 @@ footer{
         height: 350px;
     }
     .section3-content .kohi-pack{
-        width: 200px;
+        width: 95%;
     }
 }
 
@@ -644,10 +764,6 @@ footer{
         left: 57%;
     }
 
-    .content2-wrap section > .content{
-        padding: 1rem 2rem;
-    }
-
     .section1-content{
         flex-wrap: wrap;
         row-gap: 2rem;
@@ -655,7 +771,7 @@ footer{
 
     .section1-content .thumbnail{
         width: 70%;
-        height: 200px;
+        height: 150px;
     }
 
     .section1-content .thumbnail1{
@@ -669,15 +785,40 @@ footer{
     .section1-content .thumbnail3{
         background-image: url("assets/plant3-horizontal.jpg");
     }
+    .section2-content{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        column-gap: 1rem;
+    }
+
+    .section2-content figure{
+        display: block;
+    }
 
     .section2-content figure > img{
-        width: 20%;
+        width: 100%;
     }
+
+    .section2-content > figure:last-child{
+        grid-column: 1/3;
+    }
+    .section2-content > figure > .grinder {
+        width: 100%;
+        height: 200px;
+        background-image: url("assets/grinder-lg.jpg");
+        background-size:cover;
+        background-position: center center;
+    }
+
     .section3-content .product-desc-btn{
         font-size: 1rem;
     }
     .section3-content .kohi-pack{
-        width: 160px;
+        width: 90%;
+    }
+    .bi-caret-up-fill,.bi-caret-down-fill{
+        width: 14px;
+        height: 14px;
     }
 }
 
@@ -710,14 +851,15 @@ footer{
         border-radius: 3px;
         border: 1px solid gray;
         color: whitesmoke
-    };
+    }
     
-
-    .content1-title-mobile{
-        display: block;
+    .content1 .content1-title-mobile{
+        display: block !important;
         font-size: 2rem !important;
     }
-
+    aside .bi-info-circle{
+        width: 16px;
+    }
     .content1-title{
         display: none;
     }
@@ -726,17 +868,29 @@ footer{
         display: none;
     }
 
+
+    .content2-wrap .content{
+        padding: 3rem 2rem !important;
+    }
+
     .section1-content .thumbnail{
         width: 90%;
         height: 100px;
     }
+
+
     .section3-content {
         flex-wrap: wrap;
+        row-gap: 3rem;
     }
     .section3-content > div{
         align-items: center;
     }
     .section3-content .kohi-pack{
         width: 70%;
+    }
+    .bi-caret-up-fill,.bi-caret-down-fill{
+        width: 12px;
+        height: 12px;
     }
 }
