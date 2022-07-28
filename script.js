@@ -1,9 +1,9 @@
-const productDescBtns = document.querySelectorAll("button.product-desc-btn");
-const topNav = document.querySelectorAll("nav.top-nav ul li");
 const content2 = document.querySelector("div.content2-wrap");
 const section3 = document.querySelector("div.content2-wrap section.section3-wrap");
 const brewingTools = document.querySelector("div.brewing-tools");
 
+
+const productDescBtns = document.querySelectorAll("button.product-desc-btn");
 // there are two things we want to do:
 // 1. toggle the description product (<p> tag)
 // 2. toggle the caret symbol (<svg> tag)
@@ -22,6 +22,7 @@ productDescBtns.forEach(productDescBtn => {
   });
 });
 
+const topNav = document.querySelectorAll("nav.top-nav ul li");
 
 // references: 
 // https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
@@ -40,11 +41,7 @@ topNav.forEach((li,idx) => {
       const position = content2.getBoundingClientRect();
       const offsetPosition = position.top + window.scrollY;
       window.scrollTo({top:offsetPosition,behavior:"smooth"})
-    }else if(idx===1){
-      const position = brewingTools.getBoundingClientRect();
-      const offsetPosition = position.top + window.scrollY;
-      window.scrollTo({top:offsetPosition,behavior:"smooth"})
-    }else{
+    }else if(idx===2){
       const position = section3.getBoundingClientRect();
       // 1rem = 16px <=> 7rem = 112px
       // 112 is the padding of the title(3rem) and the size of the text(4rem)
@@ -57,7 +54,7 @@ topNav.forEach((li,idx) => {
 
 // hamburger menu
 const hamburgerMenu = document.querySelector(".btn1");
-const topNavContainer = document.querySelector("nav.top-nav ul");
+const topNavContainer = document.querySelector("nav.top-nav");
 hamburgerMenu.addEventListener("click", function(){
   this.classList.toggle("open");
   topNavContainer.classList.toggle("show");
@@ -90,6 +87,8 @@ infoContainer.addEventListener("click", function(){
 // reference:
 // https://github.com/patrickchennn/my-sort-visualizer
 const algoMenuLine = document.querySelector(".algo-menu-line");
+const topNavContainerUl = document.querySelector("nav.top-nav ul");
+
 let leftDef=0, widthDef=0;
 let calcPosition, calcWidth;
 
@@ -97,14 +96,14 @@ let calcPosition, calcWidth;
 let isFirstTime = true;
 
 // minus 1 to exclude the last element which line animation it self
-for(let i=0; i<topNavContainer.childElementCount-1; i++){
+for(let i=0; i<topNavContainerUl.childElementCount-1; i++){
   /* references:
     https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
     https://stackoverflow.com/questions/11634770/get-position-offset-of-element-relative-to-a-parent-container
   */
 
   // if the li element is hovered
-  topNavContainer.children[i].addEventListener("mouseover", (e) => {
+  topNavContainerUl.children[i].addEventListener("mouseover", (e) => {
     let menu = e.target;
     console.log(menu);
     console.log(menu.offsetLeft);
@@ -122,7 +121,7 @@ for(let i=0; i<topNavContainer.childElementCount-1; i++){
   });
   
   // if the li element is clicked
-  topNavContainer.children[i].addEventListener("click", () => {
+  topNavContainerUl.children[i].addEventListener("click", () => {
     console.log("clicked");
     
     // make the menu line fixed place according where it gets clicked
@@ -135,7 +134,7 @@ for(let i=0; i<topNavContainer.childElementCount-1; i++){
   });
 }
 
-topNavContainer.addEventListener("mouseleave", () => {
+topNavContainerUl.addEventListener("mouseleave", () => {
   // *if the user have not click anything in the algo picker, remove the line animation.
   if(isFirstTime===true) algoMenuLine.style.display = "none"
   
@@ -147,9 +146,46 @@ topNavContainer.addEventListener("mouseleave", () => {
 
 
 
+// reference: https://blog.logrocket.com/build-image-carousel-from-scratch-vanilla-javascript/
+let currSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const nextSlide = document.querySelector(".btn-next");
+
+// initial
+slides.forEach((slide,idx) => {
+  slide.style.transform = `translateX(${100 * (idx-currSlide)}%)`;
+});
 
 
+nextSlide.addEventListener("click",function(){
+  // if the current slide is the last, set currSlide=0 which we will go back to the first slide
+  // else we just increment the currSlide which it means "take me to the next slide"
+  currSlide===slides.length-1 ? 
+    currSlide=0 : currSlide++
+  ;
 
+  // -200% previous previous slide
+  // -100% previous slide
+  // 0% current slide
+  // 100% next slide
+  // 200% next next slide
+
+  // this means for each slide we will adjust the position according to the values above
+  slides.forEach((slide,idx) => {
+    slide.style.transform = `translateX(${100 * (idx-currSlide)}%)`;
+  });
+});
+
+const prevSlide = document.querySelector(".btn-prev");
+prevSlide.addEventListener("click",function(){
+  currSlide===0 ? 
+    currSlide=slides.length-1 : currSlide--
+  ;
+
+  slides.forEach((slide,idx) => {
+    slide.style.transform = `translateX(${100 * (idx-currSlide)}%)`;
+  });
+});
 
 
 

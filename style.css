@@ -63,7 +63,7 @@ body,ul,h1,h2,h3,h4,h5,h6,p,figure{
     padding-bottom: 3rem;
     position: sticky;
     bottom: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .transparent-color{ color: transparent !important; }
@@ -221,7 +221,7 @@ header nav ul li:active{
 .desc-wrap{
     position: absolute;
     top: 25%;
-    left:55%;
+    left: 55%;
 }
 
 .desc{
@@ -230,8 +230,7 @@ header nav ul li:active{
 
 aside .info-container{
     margin: 1rem 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     width: 100%;
     height: 50px;
     background-color: #efefef;
@@ -300,8 +299,7 @@ aside .info-container:hover{
 .content2-wrap{
     margin: 2rem 1rem;
     border-radius: 4.5rem;
-    display: grid;
-    grid-template-rows: repeat(3,auto);
+
 }
 
 .content2-wrap > section {
@@ -313,6 +311,8 @@ aside .info-container:hover{
     border-radius: 4.5rem;
     background-color: var(--content2-per-section);
     box-shadow: 0px 2px 15px rgb(110, 105, 105);
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -335,9 +335,7 @@ aside .info-container:hover{
 
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 1~~~~~~~~~~~~~~~~~~~~ */
 .section1-wrap{
-    border-top-left-radius: 2.5rem;
-    border-top-right-radius: 2.5rem;
-    position: relative;
+    border-radius: 2.5rem 2.5rem 0 0;
 }
 .section1-title{
     margin-bottom: 3rem;
@@ -346,11 +344,12 @@ aside .info-container:hover{
 
 .section1-content{
     width: 100%;
-    height: 500px;
-    position: absolute;
-    z-index: 1;
+    height: 900px;
+    overflow: hidden;
     display: flex;
-    column-gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .section1-content code{
@@ -371,15 +370,15 @@ aside .info-container:hover{
     background-size:cover;
     background-position: center center;
     box-shadow: 0px 0px 5px 1px #072906;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 600px;
 }
 
 .section1-content .slide{
     position: absolute;
     display: flex;
+    column-gap: 2rem;
 }
-
 
 .section1-content .slide1 .thumbnail1{
     background-image: url("assets/slide/1/ver1.jpg");
@@ -404,6 +403,9 @@ aside .info-container:hover{
     background-image: url("assets/slide/3/ver2.jpg");
 }
 
+.section1-content figure{
+    padding: 1rem 2rem;
+}
 
 .section1-content figcaption{
     margin-top: 0.5rem;
@@ -411,21 +413,22 @@ aside .info-container:hover{
 
 .section1-content figcaption > p{
     text-align: justify;
-    text-indent: 48px;
 }
 
 .section1-content .btn{
+    margin: 1rem;
     padding: 0.5rem;
-    border: 0;
+    border: 0.1px solid #008839;
     border-radius: 50%;
-    background-color: #CEE5D0;
+    background-color: #00c04f;
     cursor: pointer;
     position: absolute;
     z-index: 999;
+    top: 50%;
 }
 
 .section1-content .btn:focus{
-    border: 10px solid salmon;
+    box-shadow: 0px 0px 2px 3px rgba(54, 54, 54, 0.932);
 }
 
 .section1-content .btn > svg{
@@ -433,8 +436,13 @@ aside .info-container:hover{
     height: 2rem;
 }
 
+.section1-content .btn-next{
+    right: 0;
+}
 
-
+.section1-content .btn-prev{
+    left: 0;
+}
 
 
 
@@ -443,9 +451,6 @@ aside .info-container:hover{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 2~~~~~~~~~~~~~~~~~~~~ */
-.section2-wrap{
-    position: relative;
-}
 
 .section2-content{
     display: grid;
@@ -483,13 +488,9 @@ aside .info-container:hover{
 
 
 
-
-
-
 /* ~~~~~~~~~~~~~~~~~~~~CONTENT2 SECTION 3~~~~~~~~~~~~~~~~~~~~ */
 .section3-wrap{
-    border-bottom-left-radius: 4.5rem;
-    border-bottom-right-radius: 4.5rem;
+    border-radius: 0 0 4.5rem 4.5rem;
 }
 
 .section3-content{
@@ -543,11 +544,13 @@ aside .info-container:hover{
 /* ~~~~~~~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~~~~~~ */
 
 footer{
+    padding: 2rem 4rem;
     color: #E7F6F2;
     background-color: #2C3333;
     width: 100%;
     height: 200px;
 }
+
 
 footer a{
     color: #E7F6F2;
@@ -716,8 +719,8 @@ footer a{
         font-size: 3.5rem;
     }
     .section1-content .thumbnail{
-        width: 250px;
-        height: 350px;
+        width: 400px;
+        height: 500px;
     }
     .section3-content .kohi-pack{
         width: 95%;
@@ -730,9 +733,10 @@ footer a{
         font-size: 2.5rem;
     }
     .section1-content .thumbnail{
-        width: 150px;
-        height: 250px;
+        width: 280px;
+        height: 450px;
     }
+
 }
 
 /* Medium devices (tablets, <=768px) */
@@ -763,28 +767,20 @@ footer a{
     .desc-wrap{
         left: 57%;
     }
-
+    .section1-content .btn > svg{
+        width: 1rem;
+        height: 1rem;
+    }
     .section1-content{
         flex-wrap: wrap;
         row-gap: 2rem;
     }
 
     .section1-content .thumbnail{
-        width: 70%;
-        height: 150px;
+        width: 250px;
+        height: 400px;
     }
 
-    .section1-content .thumbnail1{
-        background-image: url("assets/plant1-horizontal.jpg");
-    }
-    
-    .section1-content .thumbnail2{
-        background-image: url("assets/plant2-horizontal.jpg");
-    }
-    
-    .section1-content .thumbnail3{
-        background-image: url("assets/plant3-horizontal.jpg");
-    }
     .section2-content{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(2,1fr);
@@ -834,7 +830,9 @@ footer a{
     header{
         position: relative;
     }
-
+    .algo-menu-line{
+        display: none !important;
+    }
     header nav{
         display: none;
     }
@@ -847,12 +845,14 @@ footer a{
         z-index: 100;
     }
     header nav ul li {
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border-radius: 3px;
         border: 1px solid gray;
+    }
+    header nav ul a {
+        font-size: 1.25rem;
         color: whitesmoke
     }
-    
     .content1 .content1-title-mobile{
         display: block !important;
         font-size: 2rem !important;
@@ -867,15 +867,21 @@ footer a{
     .content1 .find-store-btn{
         display: none;
     }
-
-
+    .section1-content .btn {
+        margin: 0.2rem;
+        padding: 0.25rem;
+    }
+    .section1-content{
+        height: 400px;
+    }
     .content2-wrap .content{
         padding: 3rem 2rem !important;
+        row-gap:0;
     }
 
     .section1-content .thumbnail{
-        width: 90%;
-        height: 100px;
+        width: 100px;
+        height: 150px;
     }
 
 
