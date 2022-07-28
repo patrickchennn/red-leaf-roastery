@@ -1,3 +1,14 @@
 all pict/vids were collected from:
 https://pixabay.com/
 https://unsplash.com/
+
+something new that I learn from this project:
+- build carousel using vanilla js
+https://blog.logrocket.com/build-image-carousel-from-scratch-vanilla-javascript/
+
+- how to use position sticky properly
+https://www.youtube.com/watch?v=8TyoihVGErI&t=683s
+https://www.youtube.com/watch?v=NzjU1GmKosQ
+
+- semantic tag <mark>
+https://www.w3schools.com/tags/default.asp

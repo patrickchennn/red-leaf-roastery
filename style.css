@@ -276,11 +276,19 @@ aside .info-container:hover{
     justify-content: center;
 }
 
-.about-me > div .profile-wrap > img {
+aside .profile-wrap > img{
     border-radius: 50%;
     width: 100px;
     height: 100px;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -541,6 +549,22 @@ aside .info-container:hover{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~footer~~~~~~~~~~~~~~~~~~~~ */
 
 footer{
@@ -777,7 +801,7 @@ footer a{
     }
 
     .section1-content .thumbnail{
-        width: 250px;
+        width: 220px;
         height: 400px;
     }
 
@@ -860,6 +884,12 @@ footer a{
     aside .bi-info-circle{
         width: 16px;
     }
+
+    aside .profile-wrap > img{
+        width: 50px;
+        height: 50px;
+    }
+
     .content1-title{
         display: none;
     }
