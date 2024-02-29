@@ -195,7 +195,6 @@ header nav ul li:active{
 
 .content1-bg{
     width: 100%;
-    max-width: 1400px;
 }
 
 .content1 .desc-wrap > *{
@@ -732,7 +731,7 @@ footer a{
 /* XX-Large devices (larger desktops, >=1400px and up) */
 @media (min-width: 1400px) { 
     .container{
-        width: 1320px;
+        width: 100%;
     }
 }
 
